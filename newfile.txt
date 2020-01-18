@@ -1,0 +1,7 @@
+git init
+git status
+git add
+git commit -m "day1"
+git log
+git checkout hashcode
+git checkout branchname
