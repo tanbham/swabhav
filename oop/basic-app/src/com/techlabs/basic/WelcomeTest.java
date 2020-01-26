@@ -7,7 +7,7 @@ public class WelcomeTest {
 		System.err.print(25);
 		System.err.print(5000.23);
 		System.err.print(true);
-		
+			
 		printInfo(20);
 		printInfo(500.023);
 		printInfo('t');
