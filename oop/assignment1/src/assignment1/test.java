@@ -2,7 +2,7 @@ package assignment1;
 
 public class test {
 	public static void main(String args[]) {
-		String s = "http://www.swabhavtech.com?developer=pawan&role=software";
+	    String s = "http://www.swabhavtech.com?developer=pawan&role=software";
 	    String new_s1 = s.replaceAll("=",".");
 	    String new_s2 = new_s1.replaceAll("&",".");
 	    System.out.println(new_s2);
