@@ -7,8 +7,8 @@ public class ViolateDryPrinciple {
 		int unitsPlaceDigit = calculateUnitsPlaceDigit(randomNumbers);
 		int tensPlaceDigit = calculateTensPlaceDigit(randomNumbers);
 		System.out.println("Units place digit is "+unitsPlaceDigit+" and tens place digit is "+tensPlaceDigit);
+		
 	}
-	
 	
 	private static int calculateUnitsPlaceDigit(int randomNumbers[]){
 		int sum = 0;
