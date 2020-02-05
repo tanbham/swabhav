@@ -15,8 +15,8 @@ public class ApplyDryPrinciple {
 	}
 	
 	private static int calculateTensPlaceDigit(int randomNumbers[]) {
-		int tensDigit = calculateSum(randomNumbers)/10;
-		return tensDigit;
+		int sum = calculateSum(randomNumbers)/10;
+		return sum%10;
 	}
 	
 	private static int calculateSum(int randomNumbers[]) {

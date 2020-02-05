@@ -23,6 +23,7 @@ public class ViolateDryPrinciple {
 		for(int i : randomNumbers) {
 			sum = sum + i;
 		}
-		return sum/10;
+		sum = sum/10;
+		return sum%10;
 	}
 }
