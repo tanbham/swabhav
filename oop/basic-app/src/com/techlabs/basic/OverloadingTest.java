@@ -1,6 +1,6 @@
 package com.techlabs.basic;
 
-public class WelcomeTest {
+public class OverloadingTest {
 	public static void main(String args[]) {
 		System.err.print("h");
 		System.err.print(202.f);
@@ -15,7 +15,7 @@ public class WelcomeTest {
 		printInfo(22.2);
 	}
 	
-	public static void printInfo(int integer) {
+	private static void printInfo(int integer) {
 		System.out.println(integer);
 	}
 	public static void printInfo(double d) {
