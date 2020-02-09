@@ -8,6 +8,13 @@ public class SumAndAverage {
 			return;
 		}
 		
+		if(! names[names.length-1].equals("-even")){
+			int flag = 3;
+			int limit = names.length;
+			System.out.println("sum is "+calculateSumOfNumbers(names,flag,limit));
+			System.out.println("avg is "+calculateAvgOfNumbers(names,flag,limit));
+		}
+		
 		if(names[names.length-1].equals("-even")) {
 			int flag = 0;
 			int limit = 0;
@@ -50,6 +57,11 @@ public class SumAndAverage {
 				}
 			}
 		}
+		if(flag == 3) {
+			for(int i=0 ;i<names.length-1 ; i++) {
+				sum = sum + Integer.parseInt(names[i]);
+			}
+		}
 		return String.valueOf(sum);
 	}
 	
@@ -62,6 +74,10 @@ public class SumAndAverage {
 
 		}
 		if(flag == 1){
+			String avg = calculateSumOfNumbers(names , flag , limit);
+			avg1 = Integer.parseInt(avg)/limit;
+		}
+		if(flag == 3) {
 			String avg = calculateSumOfNumbers(names , flag , limit);
 			avg1 = Integer.parseInt(avg)/limit;
 		}
