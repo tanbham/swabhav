@@ -1,6 +1,6 @@
 package com.techlabs.gettersetter;
 
-public class EmployeeDetail {
+public class Employee {
 	public static void main(String args[]) {
 		EmployeeDetails tanmay = new EmployeeDetails();
 		EmployeeDetails saloni = new EmployeeDetails();
