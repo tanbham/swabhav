@@ -1,5 +1,5 @@
 package com.techlabs.calisthenics;
-
+//don't use else keywords
 public class RuleTwoFollowed {
 	public static void main(String args[]) {
 		if(args.length != 0) {

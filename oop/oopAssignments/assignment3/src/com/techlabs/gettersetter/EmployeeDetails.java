@@ -1,5 +1,6 @@
 package com.techlabs.gettersetter;
-
+//private methods and private instance variables do not have access outside the class
+//they can get access outside the class by get set methods
 public class EmployeeDetails {
 	private String name;
 	private int salary;

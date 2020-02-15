@@ -21,7 +21,7 @@ public class ClassDetailsTest {
 		System.out.println("The name of class is = " +class1.getCanonicalName());
 		System.out.println("The name of constructor is = " +class1.getConstructor());
 	
-		Method [] methods1 = class1.getMethods();
+		Method [] methods1 = class1.;
 		System.out.println("Methods of the class are :");
 		for (Method method:methods1) {
 			System.out.println(method.getName());

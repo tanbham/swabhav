@@ -1,5 +1,5 @@
 package com.techlabs.calisthenics;
-
+//use only one level of indentation
 public class RuleOneFollowed {
 	private static int value = 1;
 	private static int twoByTwoMatrix[][] = new int[3][3];
