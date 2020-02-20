@@ -4,16 +4,13 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class ClassDetailsTest {
-	public static void main(String args[]) throws NoSuchMethodException, SecurityException {
+	public static void main(String args[]) throws NoSuchMethodException, SecurityException, ClassNotFoundException{
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("Type in format java.package.classname");
 		String input = s.next();
-		
-		int indexOfLastDot = input.lastIndexOf(".");
-		input = input.substring(indexOfLastDot+1);
-		String stringObject = new String(input);
- 		getDetailsOfClass(stringObject.class);
+		Class className = Class.forName(input);
+		getDetailsOfClass(className);
 		s.close();
 	}
 
@@ -21,10 +18,24 @@ public class ClassDetailsTest {
 		System.out.println("The name of class is = " +class1.getCanonicalName());
 		System.out.println("The name of constructor is = " +class1.getConstructor());
 	
-		Method [] methods1 = class1.;
+		Method [] methodsOfClass = class1.getMethods();
 		System.out.println("Methods of the class are :");
-		for (Method method:methods1) {
+		for (Method method:methodsOfClass) {
 			System.out.println(method.getName());
+		}
+		
+		System.out.println("Setters of the class are :");
+		for (int i = 0; i < methodsOfClass.length; i++) {
+			if (methodsOfClass[i].getName().startsWith("set")) {
+				System.out.println(methodsOfClass[i].getName());
+			}
+		}
+		
+		System.out.println("Getters of the class are :");
+		for (int i = 0; i < methodsOfClass.length; i++) {
+			if (methodsOfClass[i].getName().startsWith("get")) {
+				System.out.println(methodsOfClass[i].getName());
+			}
 		}
 		
 		
