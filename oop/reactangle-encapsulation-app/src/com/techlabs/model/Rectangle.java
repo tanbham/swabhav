@@ -7,25 +7,21 @@ public class Rectangle {
 	private final int MIN_LIMIT = 1;
 	
 	public void changeWidth(int pwidth) {
-		if(pwidth < MIN_LIMIT) {
-			width = MIN_LIMIT;
-		}
-		else if(pwidth> MAX_LIMIT){
-			width = MAX_LIMIT;
-		}
-		else {
-			width = pwidth;
-		}
+		width = checkConstraints(pwidth);
 	}
 	public void changeHeight(int pheight) {
-		if(pheight< MIN_LIMIT) {
-			height = MIN_LIMIT;
+		height = checkConstraints(pheight);
+	}
+	
+	public int checkConstraints(int value) {
+		if(value< MIN_LIMIT) {
+			return MIN_LIMIT;
 		}
-		else if(pheight > MAX_LIMIT){
-			height = MAX_LIMIT;
+		else if(value > MAX_LIMIT){
+			return MAX_LIMIT;
 		}
 		else {
-			height = pheight;
+			return value;
 		}
 	}
 	

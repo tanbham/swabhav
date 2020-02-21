@@ -8,6 +8,7 @@ public class RectangleTest {
 		small.changeWidth(50);
 		small.changeHeight(-10);
 		System.out.printf("width = %d , height = %d\n",small.readWidth(),small.readHeight());
+
 		
 		Rectangle big = new Rectangle();
 		big.changeWidth(50000);
