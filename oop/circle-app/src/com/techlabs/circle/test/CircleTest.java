@@ -3,8 +3,6 @@ package com.techlabs.circle.test;
 import com.techlabs.circle.Circle;
 
 public class CircleTest {
-	private static int minIndexOfCircleArray;
-
 	public static void main(String args[]) {
 		Circle [] circles = new Circle[5];
 		
@@ -25,10 +23,10 @@ public class CircleTest {
 		
 		printInfo(circles);
 		//printInfo(circles[0]);
-		Circle big = findBigCircle(circles);
-		Circle small = findSmallCircle(circles);
-		System.out.println("Largest Circle is of radius " + big.getRadius());
-		System.out.println("Smallest Circle is of radius " + small.getRadius());
+		//Circle big = findBigCircle(circles);
+		//Circle small = findSmallCircle(circles);
+		System.out.println("Largest Circle is of radius " + findBigCircle(circles).getRadius());
+		System.out.println("Smallest Circle is of radius " + findSmallCircle(circles).getRadius());
 	}
 	
 
@@ -62,6 +60,4 @@ public class CircleTest {
 		}
 		return 	circles[maxIndexOfCircleArray];
 	}
-	
-	
 }
