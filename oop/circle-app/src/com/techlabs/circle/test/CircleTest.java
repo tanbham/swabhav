@@ -42,30 +42,26 @@ public class CircleTest {
 	}
 	
 	public static Circle findSmallCircle(Circle [] circles) {
-		int flag = 0;
-		int index = checkCircle(circles,flag);
-		return circles[index];
+		int minIndexOfCircleArray = 0;;
+		float  minRadius = 0.0f;
+		for(int i=0 ; i<circles.length ;i++) {
+			if(circles[i].getRadius() < minRadius) {
+				minIndexOfCircleArray = i;
+			}
+		}
+		return 	circles[minIndexOfCircleArray];
 	}
 	
 	public static Circle findBigCircle(Circle [] circles) {
-		int flag = 1;
-		int index = checkCircle(circles,flag);
-		return circles[index];
-	}
-	
-	public static int checkCircle(Circle[] circles,int flag) {
-		float  minRadius = 0.0f;
+		int maxIndexOfCircleArray = 0;
 		float  maxRadius = 0.0f;
-		int index = 0;
-		for(int i=0 ; i<circles.length ; i++) {
-			if(flag == 0 && circles[i].getRadius()< minRadius) {
-				index = i;
-			}
-			if(flag == 1 && circles[i].getRadius()> maxRadius) {
-				index = i;
+		for(int i=0 ; i<circles.length ;i++) {
+			if(circles[i].getRadius() > maxRadius) {
+				maxIndexOfCircleArray = i;
 			}
 		}
-		return index;
+		return 	circles[maxIndexOfCircleArray];
 	}
+	
 	
 }
