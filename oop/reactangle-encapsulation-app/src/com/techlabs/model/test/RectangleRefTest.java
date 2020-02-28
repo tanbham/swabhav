@@ -6,7 +6,7 @@ public class RectangleRefTest {
 	public static void main(String args[]) {
 		Rectangle r1 = new Rectangle();
 		Rectangle r2;
-		r2 = r1;
+		r2 = r1;                          //MULTIPLE OBJECTS POINTING TO SAME REFERRENCE UNNECESSARY
 		r2.changeWidth(r2.readWidth()+1);
 		r2.changeHeight(r2.readHeight()+1);
 		

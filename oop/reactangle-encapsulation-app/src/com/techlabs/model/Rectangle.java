@@ -1,8 +1,8 @@
 package com.techlabs.model;
 
 public class Rectangle {
-	private int width;
-	private int height;
+	private int width = 10;
+	private int height = 20;
 	private final int MAX_LIMIT = 100;
 	private final int MIN_LIMIT = 1;
 	

@@ -22,8 +22,8 @@ public class RectangleArrayOfObjectTest {
 		rectangles[2].changeHeight(90);	
 		
 		printInfo(rectangles);
-		printInfo1(rectangles);
-		printInfo1(rectangles[2]);	
+		//printInfo1(rectangles);
+		//printInfo1(rectangles[2]);	
 	}
 	
 	public static void printInfo(Rectangle[] rectangles) {

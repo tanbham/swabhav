@@ -4,9 +4,9 @@ import com.techlabs.model.Rectangle;
 
 public class RectangleAnnoymousTest {
 	public static void main(String args[]) {
-		System.out.println(new Rectangle().readHeight());
+		System.out.println(new Rectangle().readHeight());//READ ONLY PURPOSE
 		System.out.println(new Rectangle().readWidth());
-		
+	
 		new Rectangle().changeHeight(10);
 		new Rectangle().changeWidth(20);
 		

@@ -10,15 +10,13 @@ public class RectanglePrintTest{
 		r1.changeWidth(5);
 		r2.changeHeight(20);
 		r2.changeWidth(30);
-		
+	
 		printInfo(r1);
 		printInfo(r2);
-	}
-	
+	}	
+	//Multiple objects through same reference
 	public static void printInfo(Rectangle r) {
 		System.out.printf("width = %d , height = %d ,area = %d\n",r.readWidth(),r.readHeight(),r.readWidth()*r.readWidth());
 	
 	}
-	
-
 }

@@ -40,7 +40,7 @@ public class CircleTest {
 	}
 	
 	public static Circle findSmallCircle(Circle [] circles) {
-		int minIndexOfCircleArray = 0;;
+		int minIndexOfCircleArray = 0;
 		float  minRadius = 0.0f;
 		for(int i=0 ; i<circles.length ;i++) {
 			if(circles[i].getRadius() < minRadius) {
