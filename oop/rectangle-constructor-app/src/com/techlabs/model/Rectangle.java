@@ -3,15 +3,13 @@ package com.techlabs.model;
 public class Rectangle {
 	private int width;
 	private int height;
-	private String color;
-	private static final String DEFAULT_COLOR = "red";
+	private ColorType color;
 
 	
-	public Rectangle(int pwidth, int pheight , String pcolor) { 
-		String newpcolor = checkColor(pcolor);
+	public Rectangle(int pwidth, int pheight , ColorType pcolor) { 
 		width = checkDimension(pwidth);
 		height = checkDimension(pheight);
-		color = newpcolor;
+		color = pcolor;
 	}
 	
 	public Rectangle(int pwidth , int pheight) {
@@ -31,9 +29,9 @@ public class Rectangle {
 		return height;
 	}
 	
-	public String getColor() {
+	public ColorType getColor() {
 		if(color == null) {
-			return DEFAULT_COLOR;
+			return ColorType.RED;
 		}
 		return color;
 	}
@@ -44,16 +42,4 @@ public class Rectangle {
 		}
 		return dimension;
 	}
-	
-	private String checkColor(String pcolor) {
-		if(pcolor == null) {
-			return DEFAULT_COLOR;
-		}
-		if(!pcolor.equalsIgnoreCase("red") &&  !pcolor.equalsIgnoreCase("green") &&  !pcolor.equalsIgnoreCase("blue")) {
-			pcolor = DEFAULT_COLOR;
-		}
-		return pcolor;
-		
-	}
-	
 }

@@ -6,6 +6,8 @@ public class Person {
 	private int age;
 	private float weight;
 	private float height;
+	private float bmi;
+	private String bodyCategory;
 	private static final int DEFAULT_VALUE = 1;
 	private static final String UNKNOWN = "unknown";
 	
@@ -16,7 +18,24 @@ public class Person {
 		weight = checkBodyDimension(pweight);
 		height = checkBodyDimension(pheight);
 	}
-
+	
+	public void calculateBmi() {
+		float heightSquare = height*height;
+		bmi = weight/heightSquare;
+	}
+	
+	public void checkBodyCategory() {
+		if(bmi < 16) {
+			bodyCategory = "Thin";
+		}
+		else if(bmi > 16 && bmi < 25) {
+			bodyCategory = "Normal";
+		}
+		else {
+			bodyCategory = "OverWeight";
+		}
+		
+	}
 
 	public void doWorkOut() {
 		weight = weight - 0.02f*weight;
@@ -44,6 +63,14 @@ public class Person {
 	
 	public float getHeight() {
 		return height;
+	}
+	
+	public float getBmi() {
+		return bmi;
+	}
+	
+	public String getBodyCategory() {
+		return bodyCategory;
 	}
 	
 	private int checkAge(int p_age) {
