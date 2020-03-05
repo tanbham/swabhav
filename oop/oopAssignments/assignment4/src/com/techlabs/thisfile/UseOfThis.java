@@ -2,8 +2,6 @@ package com.techlabs.thisfile;
 
 public class UseOfThis {
 	private int localVariable;
-	private String message;
-	
 	//default constructor
 	//this() is used to call the overloaded constructor with the given msg
 	public UseOfThis() {      
@@ -13,7 +11,6 @@ public class UseOfThis {
 	//when local variable name and argument name is same we use this keyword
 	//this is a reference variable that refers to current object
 	public UseOfThis(String message) {
-		this.message = message;
 		System.out.println(message);
 	}
 	
