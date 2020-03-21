@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
-	public static void main(String args[]) throws IOException{
+	public static void main(String args[]) throws IOException{ //try with scanner and buffer
 		readFromFile();
 	}
 	

@@ -1,5 +1,14 @@
 package com.techlabs.thisfile;
 
+
+
+//create one student app  with instance vari rollNo , Name , emailId
+//constructor and getters 
+//student - student.java
+//student.test -studentTest.java
+
+
+
 public class UseOfThis {
 	private int localVariable;
 	//default constructor

@@ -28,13 +28,12 @@ public class Person {
 		if(bmi < 16) {
 			bodyCategory = "Thin";
 		}
-		else if(bmi > 16 && bmi < 25) {
+		else if(bmi > 16 && bmi < 25) { //violation of magic no
 			bodyCategory = "Normal";
 		}
 		else {
 			bodyCategory = "OverWeight";
 		}
-		
 	}
 
 	public void doWorkOut() {
@@ -73,14 +72,14 @@ public class Person {
 		return bodyCategory;
 	}
 	
-	private int checkAge(int p_age) {
+	private int checkAge(int p_age) {  ///violate
 		if(p_age <= 0) {
 			return DEFAULT_VALUE;
 		}
 		return p_age;
 	}
 	
-	private float checkBodyDimension(float pdimension) {
+	private float checkBodyDimension(float pdimension) {  ///violate
 		if(pdimension <= 0) {
 			return DEFAULT_VALUE;
 		}
