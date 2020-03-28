@@ -3,16 +3,18 @@ package com.techlabs.customer;
 public class Customer {
 	private String name;
 	private int order;
-	private static String id;
+	private String id = "1001";
+	private static int count;
 	
 	static {
-		id = "1000";
+		count = 0;
 	}
 	
 	public Customer(String name , int order) {
 		this.name = name;
 		this.order = order;
-		id = String.valueOf(Integer.valueOf(id)+1);
+		id = String.valueOf(Integer.valueOf(id)+count);
+		count++;
 	}
 	
 	public String getName() {

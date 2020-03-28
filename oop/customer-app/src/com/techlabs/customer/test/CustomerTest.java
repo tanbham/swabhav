@@ -14,5 +14,6 @@ public class CustomerTest {
 		System.out.println(c3.getId());
 		
 		System.out.println(c3.getId());
+		System.out.println(c1.getId()); //
 	}
 }
