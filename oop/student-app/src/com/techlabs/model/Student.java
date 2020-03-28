@@ -40,6 +40,7 @@ public class Student {
 	}
 	
 	public static int headCount() {
+		//return id; /// cannot access nonstatic fields in static method
 		return countOfInstances;
 	}
 	
