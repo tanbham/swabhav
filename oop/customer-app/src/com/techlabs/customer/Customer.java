@@ -4,7 +4,6 @@ public class Customer {
 	private String name;
 	private int order;
 	private static String id;
-	private static int count;
 	
 	static {
 		id = "1000";
