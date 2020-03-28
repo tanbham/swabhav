@@ -39,6 +39,9 @@ public class Student {
 		return countOfInstances;
 	}
 	
+	public static int headCount() {
+		return countOfInstances;
+	}
 	
 	
 }
