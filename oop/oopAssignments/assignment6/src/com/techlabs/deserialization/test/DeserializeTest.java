@@ -8,16 +8,17 @@ import com.techlabs.account.Account;
 
 public class DeserializeTest {
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
-		Account acc = null;
+		Account acc[] = null;
 		
 		FileInputStream fileIn = new FileInputStream("account.ser");
 		ObjectInputStream in = new ObjectInputStream(fileIn);
 		
-		 acc = (Account) in.readObject();
+		 acc = (Account[]) in.readObject();
 		 
 		 in.close();
 		 fileIn.close();
 		 
-		 System.out.println(acc);
+		 System.out.println(acc[0]);
+		 System.out.println(acc[1]);
 	}
 }
