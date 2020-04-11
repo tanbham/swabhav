@@ -13,6 +13,7 @@ public class ProductTest {
 		sc.next();
 		
 		System.out.println("ID\t"+"NAME\t"+"PRICE\t"+"DISCOUNT\t"+"AFTER Discount");
+		
 		while(sc.hasNext()) {
 			String tupple = sc.nextLine();
 			products[i] = new Product(tupple);

@@ -21,7 +21,7 @@ public class Product {
 			System.out.print(i+"\t");
 		}
 		System.out.println("\t"+discount);
-		System.out.println();
+		//System.out.println();
 	}
 
 }
