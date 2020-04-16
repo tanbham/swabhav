@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class GameTerminal {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
+		String result = "";
 		Game newgame = null;
 		int guess = 0;
 		int choice = 0;
@@ -24,24 +25,23 @@ public class GameTerminal {
 				
 			case 1 :
 				newgame = new Game();
-				newgame.generateRandomNumber();
 				do {
 					System.out.println("Enter your guess");
 					guess = sc.nextInt();
-					if(!newgame.analayseGuess(guess)){
-						String s = (guess < newgame.getRandomNumber()) ? "Too small" : "Too Big";
-						System.out.println(s);
-					}
-				}while(guess != newgame.getRandomNumber());
-				System.out.println("Win WIn , Correct Choice");
+					result = newgame.analayseGuess(guess);
+					System.out.println(result);
+				}
+				while(!result.equalsIgnoreCase("Correct guess"));
+				System.out.println("Score is = "+newgame.getScore());
 				break;
 	
 			case 3:
 				System.out.println("All guesses are");
-				ArrayList<Integer> list = newgame.displayAllGuesses();
+				ArrayList<Integer> list = newgame.getAllGuesses();
 				for(int i : list) {
 					System.out.println(i);
 				}
+				System.out.println("Total number of guesses are = "+newgame.getTotalGuessCount());
 				break;
 				
 			case 4 :

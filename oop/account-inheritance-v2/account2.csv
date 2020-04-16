@@ -1,0 +1,6 @@
+Type,AccountNumber,Name,Balance,CreationDate,Age
+SavingAccount,101,Tanmay,10000,02-01-2000,22
+CurrentAccount,102,Saloni,5000,03-02-2001,30
+CurrentAccount,103,Rajeev,4000,04-03-2002,21
+SavingAccount,104,Suchita,3000,05-04-2003,25
+SavingAccount,105,Krishna,2000,06-05-2004,23
