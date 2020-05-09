@@ -12,6 +12,15 @@ public class Inventory {
 		guitars = new LinkedList<Guitar>();
 	}
 	
+	
+	public int getSizeOfLinkedListOfGuitars() {
+		return guitars.size();
+	}
+	
+	public LinkedList<Guitar> getListOfGuitarsInInventory() {
+		return guitars;
+	}
+	
 	public void addGuitar(String serialNumber , double price , Builder builder ,String model , Type type , Wood backwood ,Wood topwood) {
 		Guitar guitar = new Guitar(serialNumber, price, builder, model, type, backwood, topwood);
 		guitars.add(guitar);

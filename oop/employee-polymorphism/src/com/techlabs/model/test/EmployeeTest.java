@@ -22,5 +22,6 @@ public class EmployeeTest {
 		System.out.println(e.getEmpId()+"= Employee ID");
 		System.out.println(e.getBasic()+" = Basic");
 		System.out.println(e.calulateNetSalary()+" = Net Annual Salary");
+		System.out.println(e);
 	}
 }

@@ -32,4 +32,9 @@ public class Manager extends Employee{
 		System.out.println("HRA = "+hra+" DA = "+da+" TA = "+ta+"Basic = "+basic);
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Role is Manager";
+	}
 }

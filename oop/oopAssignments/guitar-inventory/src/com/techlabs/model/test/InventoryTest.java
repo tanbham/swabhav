@@ -37,7 +37,7 @@ public class InventoryTest {
 		
 	}
 
-	private static void initiliazeInventory(Inventory inventory) {
+	public static void initiliazeInventory(Inventory inventory) {
 		inventory.addGuitar("101", 5000, Builder.COLLINGS, "xyz", Type.ACOUSTICS, Wood.AFRICAN, Wood.AFRICAN);
 		inventory.addGuitar("102", 1000, Builder.FENDER, "abc", Type.ACOUSTICS, Wood.AFRICAN, Wood.AFRICAN);
 		inventory.addGuitar("103", 2000, Builder.COLLINGS, "abc", Type.ACOUSTICS, Wood.AFRICAN, Wood.AFRICAN);

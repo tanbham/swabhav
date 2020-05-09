@@ -3,11 +3,12 @@ package com.techlabs.game;
 import java.util.ArrayList;
 
 public class Game {
-	private int countOfGuesses = 0;
-	private int randomNumber = 0;
+	private int countOfGuesses;
+	private int randomNumber;
 	ArrayList<Integer> listOfGuesses = new ArrayList<Integer>();
 	
 	public Game() {
+		countOfGuesses = 0;
 		randomNumber = (int)(Math.random()*100);
 		System.out.println(randomNumber);
 	}
@@ -49,5 +50,9 @@ public class Game {
 		else {
 			return 5;
 		}
+	}
+	
+	public int getRandomNumber() {
+		return randomNumber;
 	}
 }

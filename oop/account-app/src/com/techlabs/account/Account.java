@@ -28,10 +28,6 @@ public class Account {
 			balance = balance - amt;
 			totalNoOfTransactions++;
 		}
-		else {
-			totalNoOfTransactions++;
-			System.out.println("Cannot withdraw more than "+minBalance);
-		}
 	}
 	
 	public double getBalance() {

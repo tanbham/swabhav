@@ -8,7 +8,7 @@ public class AccountTest {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		
-		Account acc1 = new Account(101,"abc",500);
+		Account acc1 = new Account(101,"abc",1000);
 		System.out.print("Enter the amount to be deposited in accNo "+acc1.getAccNo()+" : ");
 		acc1.deposit(sc.nextInt());	
 		System.out.print("Enter the amount to be withdrawn from accNo "+acc1.getAccNo()+" : ");

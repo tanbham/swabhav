@@ -2,6 +2,11 @@ package com.techlabs.annotation;
 
 public class Foo {
 	
+	@BeforeUnitTestCase
+	public void before() {
+		System.out.println("before called");
+	}
+	
 	@UnitTestCase(value = true)
 	public boolean m1() {	   //passing testcase
 		return true;

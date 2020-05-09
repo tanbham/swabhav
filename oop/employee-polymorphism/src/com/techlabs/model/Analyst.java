@@ -21,5 +21,10 @@ public class Analyst extends Employee {
 		System.out.println("perks = "+perks+"basic = "+basic);
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Role is Analayst";
+	}
 
 }

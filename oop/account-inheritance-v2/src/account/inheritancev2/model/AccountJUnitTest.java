@@ -10,22 +10,22 @@ import org.junit.Test;
 public class AccountJUnitTest {
 
 	Account acc;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	
 	@Test
-	public void testGetName() throws Exception {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	public void test_Details_stored_correctly_after_creating_SavingAccount() throws Exception {
+			
 		acc = new SavingAccount(101,"Tanmay",10000, sdf.parse("02-01-2000"),sdf.parse("09-04-1998"));
+		
+		assertEquals(101,acc.getAccNo());
 		assertEquals("Tanmay", acc.getName());
+		assertEquals(10000,(int)acc.getBalance());
+		assertEquals(sdf.parse("02-01-2000"),acc.getCreationDate());
+		
 	}
 
 	@Test
-	public void testGetAccNo() {
-		if(acc != null) {
-			assertEquals("101",acc.getAccNo());
-		}
-	}
-
-	@Test
-	public void testGetBalance() {
+	public void testGetBalance_by_withdrawing_rs2000() {
 		if(acc != null) {
 			acc.withdraw(2000);
 			assertEquals("8000",acc.getBalance());

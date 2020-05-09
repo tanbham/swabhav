@@ -27,5 +27,10 @@ public class Developer extends Employee {
 		System.out.println("PA = "+pa+" BONUS = "+bonus+" Basic = "+basic);
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Role is Developer";
+	}
 
 }
