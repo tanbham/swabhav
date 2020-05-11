@@ -1,10 +1,14 @@
 package com.techlabs.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Partner {
 	private int id;
 	private String name;
 	private double companyTurnOver;
 	private int empStrength;
+	private List<Talent> talent = new ArrayList<Talent>();
 	
 	public Partner(int id, String name, double companyTurnOver,int empStrength) {
 		this.id = id;
