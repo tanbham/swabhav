@@ -1,6 +1,7 @@
 package com.techlabs.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Partner {
@@ -8,8 +9,7 @@ public class Partner {
 	private String name;
 	private double companyTurnOver;
 	private int empStrength;
-	private List<Talent> talent = new ArrayList<Talent>();
-	
+
 	public Partner(int id, String name, double companyTurnOver,int empStrength) {
 		this.id = id;
 		this.name = name;

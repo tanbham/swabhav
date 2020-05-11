@@ -1,5 +1,7 @@
 package com.techlabs.model;
 
+import java.util.List;
+
 public class Talent {
 
 	private int id;
@@ -13,10 +15,31 @@ public class Talent {
 		this.name = name;
 		this.cgpa = cgpa;
 		this.techStack = techStack;
-		this.partner = checkIfNull();
+		this.partner = partner;
+	}
+	
+	private Partner checkIfNull(Partner Partner) {
+		if(partner == null){
+			return null;
+		}
+		else{
+			return partner;
+		}
+		
+	}
+	
+	public String getPartner(){
+		if(partner != null){
+			return partner.getName();
+		}
+		else{
+			return null;
+		}
+		
 	}
 
-	private Partner checkIfNull() {
-		return null;
+	public String toString(){
+		return ("Id="+this.id+" , "+"Name="+this.name+" ,"+"Working for="+this.partner+" , "+"CGPA="+this.cgpa+" , "+"TechStack="+this.techStack);
 	}
+	
 }
