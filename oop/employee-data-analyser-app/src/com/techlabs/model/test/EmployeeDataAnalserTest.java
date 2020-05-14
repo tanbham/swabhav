@@ -2,52 +2,53 @@ package com.techlabs.model.test;
 
 import java.util.Scanner;
 
-import com.techlabs.model.ConnectionToFile;
-import com.techlabs.model.ConnectionToURL;
+import com.techlabs.model.ConnectionToData;
 import com.techlabs.model.EmployeeSpecification;
-import com.techlabs.model.IEmployeeDataFetcher;
+
+
+//file = dataFile_emp.txt
+//url = https://swabhav-tech.firebaseapp.com/emp.txt
 
 public class EmployeeDataAnalserTest {
 	public static void main(String args[]) throws Exception{
-		Scanner sc = new Scanner(System.in);
 		int option = 0;
+		Scanner sc = new Scanner(System.in);
 		while(option != 3){
-			System.out.println("Press 1 to load data from URL");
-			System.out.println("Press 2 to load data from file");
-			System.out.println("Press 3 to exit this app");
-			System.out.println("Enter your choice");
+			System.out.println("Press 1 to fetch data from file");
+			System.out.println("Press 2 to fetch data from URL");
+			System.out.println("Press 3 to Exit");
 			option = sc.nextInt();
 			
-		
-		switch(option){
-			case 1 : 
-				System.out.println("Enter the URl");
-				String url = "https://swabhav-tech.firebaseapp.com/emp.txt";
-				ConnectionToURL fetch = new ConnectionToURL("https://swabhav-tech.firebaseapp.com/emp.txt", new EmployeeSpecification());
-				fetch.readDataFromURL();
+			
+			switch(option){
+			case 1:
+				System.out.println("Enter the file name");
+				String fileName = sc.next();
+				ConnectionToData fetch = new ConnectionToData(fileName, new EmployeeSpecification());
+				fetch.readDataFromFile();
 				System.out.println("Employees Information");
 				System.out.println(fetch.getEmployees());
 				System.out.println("Rich Employee is");
 				System.out.println(fetch.getMaxSalariedEmployee());
 				System.out.println("Total Number of Employees= "+fetch.getTotalNumberOfEmployees()+"\n");
 				break;
-					
-			case 2 : 
-				System.out.println("Enter the file Name");
-				ConnectionToFile fetcher = new ConnectionToFile("dataFile_emp.txt",new EmployeeSpecification());
-				fetcher.readDataFromFile();
+				
+			case 2:
+				System.out.println("Enter the URL");
+				String url = sc.next();
+				ConnectionToData fetcher = new ConnectionToData(new EmployeeSpecification(),url);
+				fetcher.readDataFromURL();
 				System.out.println("Employees Information");
 				System.out.println(fetcher.getEmployees());
-				System.out.println("Rich employee is");
+				System.out.println("Rich Employee is");
 				System.out.println(fetcher.getMaxSalariedEmployee());
 				System.out.println("Total Number of Employees= "+fetcher.getTotalNumberOfEmployees()+"\n");
 				break;
 				
 			case 3:
-				System.out.println("Exiting , Thankyou");
-				break;	
-						
-		}
-		}
+				System.out.println("ThankYou , Exiting");
+				break;
+			}
+		}	
 	}
 }
