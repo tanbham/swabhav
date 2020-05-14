@@ -4,16 +4,32 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.TreeSet;
 
 public class ConnectionToURL {
-	SalaryComparator salaryCompare = new SalaryComparator();
 	private URL oracle;
-	private ArrayList<String> listOfEmpDetails = new ArrayList<String>();
-	private TreeSet<Employee> setOfEmployees = new TreeSet<>(salaryCompare);
+	private IEmployeeDataFetcher fetcher;
 	
-	public ConnectionToURL() throws Exception {
-		oracle = new URL("https://swabhav-tech.firebaseapp.com/emp.txt");
+	public ConnectionToURL(String url, IEmployeeDataFetcher fetcher) throws Exception {
+		oracle = new URL(url);
+		this.fetcher = fetcher;
+	}
+	
+	public HashSet<Employee> getEmployees(){
+		return fetcher.getEmployeeDetails();
+	}
+	
+	public int getTotalNumberOfEmployees(){
+		return fetcher.getTotalNumberOfEmployees();
+	}
+	
+	public Employee getMaxSalariedEmployee(){
+		return fetcher.getMaximumSalariedEmployee();
+	}
+
+	private void storeInEmployeeObject(String[] employeeData) {
+		fetcher.storeNewEmployees(employeeData);
 	}
 	
 	public void readDataFromURL() throws Exception {
@@ -27,13 +43,5 @@ public class ConnectionToURL {
         } 
         in.close();
 	}
-	
-	public TreeSet<Employee> getEmployeeDetails(){
-		return setOfEmployees;
-	}
 
-	private void storeInEmployeeObject(String[] employeeData) {
-		Employee employee = new Employee(employeeData[0],employeeData[1],employeeData[2],employeeData[3],employeeData[4],employeeData[5],employeeData[6],employeeData[7]);
-		setOfEmployees.add(employee); 
-	}
 }
