@@ -11,37 +11,18 @@ public class ConnectionToData {
 	private HashSet<Employee> setOfEmployees = new HashSet<Employee>();
 	private String fileName;
 	private URL oracle;
+	private File file;
 	
 	public ConnectionToData(String fileName) {
 		this.fileName = fileName;
+		File file = new File(fileName);
 	}
 	
 	public ConnectionToData(String url , int num) throws Exception {
 		oracle = new URL(url);
 	}
-	
-	public HashSet<Employee> getEmployees(){
-		return setOfEmployees;
-	}
-	
-	public int getTotalNumberOfEmployees(){
-		return setOfEmployees.size();
-	}
-	
-	public Employee getMaxSalariedEmployee(){
-		Employee richEmployee = null;
-		double maxSalary = 0;
-		for(Employee employee : setOfEmployees){
-			if(employee.getSalary() > maxSalary){
-				maxSalary = employee.getSalary();
-				richEmployee = employee;
-			}
-		}
-		return richEmployee;
-	}
-	
+
 	public void readDataFromFile() throws Exception{
-		File file = new File(fileName);
 		Scanner sc = new Scanner(file);
 		String inputLine;
 		while(sc.hasNextLine()){
@@ -64,9 +45,32 @@ public class ConnectionToData {
         } 
         in.close();
 	}
+	
 
 	private void storeNewEmployees(String[] employeeData) {
 		Employee employee = new Employee(employeeData[0],employeeData[1],employeeData[2],employeeData[3],employeeData[4],employeeData[5],employeeData[6],employeeData[7]);
 		setOfEmployees.add(employee); 
 	}
+
+	public HashSet<Employee> getEmployees(){
+		return setOfEmployees;
+	}
+	
+	public int getTotalNumberOfEmployees(){
+		return setOfEmployees.size();
+	}
+	
+	public Employee getMaxSalariedEmployee(){
+		Employee richEmployee = null;
+		double maxSalary = 0;
+		for(Employee employee : setOfEmployees){
+			if(employee.getSalary() > maxSalary){
+				maxSalary = employee.getSalary();
+				richEmployee = employee;
+			}
+		}
+		return richEmployee;
+	}
+	
+	
 }
