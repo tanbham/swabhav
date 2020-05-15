@@ -22,18 +22,6 @@ public class ConnectionToData {
 		this.fetcher = fetcher;
 	}
 	
-	public HashSet<Employee> getEmployees(){
-		return fetcher.getEmployeeDetails();
-	}
-	
-	public int getTotalNumberOfEmployees(){
-		return fetcher.getTotalNumberOfEmployees();
-	}
-	
-	public Employee getMaxSalariedEmployee(){
-		return fetcher.getMaximumSalariedEmployee();
-	}
-	
 	public void readDataFromFile() throws Exception{
 		File file = new File(fileName);
 		Scanner sc = new Scanner(file);
@@ -57,6 +45,18 @@ public class ConnectionToData {
         	storeInEmployeeObject(employeeData);
         } 
         in.close();
+	}
+	
+	public HashSet<Employee> getEmployees(){
+		return fetcher.getEmployeeDetails();
+	}
+	
+	public int getTotalNumberOfEmployees(){
+		return fetcher.getTotalNumberOfEmployees();
+	}
+	
+	public Employee getMaxSalariedEmployee(){
+		return fetcher.getMaximumSalariedEmployee();
 	}
 	
 	private void storeInEmployeeObject(String[] employeeData) {
