@@ -1,37 +1,6 @@
 package com.techlabs.model;
 
 public class Employee implements Comparable<Employee>{
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((role == null) ? 0 : role.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(salary);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Employee other = (Employee) obj;
-		if (role == null) {
-			if (other.role != null)
-				return false;
-		} else if (!role.equals(other.role))
-			return false;
-		if (Double.doubleToLongBits(salary) != Double
-				.doubleToLongBits(other.salary))
-			return false;
-		return true;
-	}
-
 	private int empid;
 	private String name;
 	private String role;
@@ -62,5 +31,36 @@ public class Employee implements Comparable<Employee>{
 	
 	public String toString() {
 		return("ID:"+this.empid+" , "+"Salary:"+this.salary+" , "+"Name:"+this.name+" , "+"Role:"+this.role+" , "+"ManagerId:"+this.managerId+" , "+"JoiningDate:"+this.dateOfJoining+" , "+"Commission:"+this.commission+" , "+"DepartmentNumber:"+this.deptNumber+"\n");
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(salary);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
+		if (Double.doubleToLongBits(salary) != Double
+				.doubleToLongBits(other.salary))
+			return false;
+		return true;
 	}
 }

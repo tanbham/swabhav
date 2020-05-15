@@ -1,11 +1,6 @@
 package com.techlabs.model.test;
-
 import java.util.Scanner;
-
 import com.techlabs.model.ConnectionToData;
-import com.techlabs.model.EmployeeSpecification;
-
-
 //file = dataFile_emp.txt
 //url = https://swabhav-tech.firebaseapp.com/emp.txt
 
@@ -24,7 +19,7 @@ public class EmployeeDataAnalserTest {
 			case 1:
 				System.out.println("Enter the file name");
 				String fileName = sc.next();
-				ConnectionToData fetch = new ConnectionToData(fileName, new EmployeeSpecification());
+				ConnectionToData fetch = new ConnectionToData(fileName);
 				fetch.readDataFromFile();
 				System.out.println("Employees Information");
 				System.out.println(fetch.getEmployees());
@@ -36,7 +31,7 @@ public class EmployeeDataAnalserTest {
 			case 2:
 				System.out.println("Enter the URL");
 				String url = sc.next();
-				ConnectionToData fetcher = new ConnectionToData(new EmployeeSpecification(),url);
+				ConnectionToData fetcher = new ConnectionToData(url,1);
 				fetcher.readDataFromURL();
 				System.out.println("Employees Information");
 				System.out.println(fetcher.getEmployees());

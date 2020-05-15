@@ -2,6 +2,7 @@ package com.techlabs.model.test;
 
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
+import java.util.UUID;
 
 import com.techlabs.model.Organisation;
 import com.techlabs.model.Partner;
@@ -12,7 +13,7 @@ public class Program {
 	public static void main(String args[]) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		
-		Organisation swabhav = new Organisation(100,"Swabhav",sdf.parse("09-04-1998"));
+		Organisation swabhav = new Organisation(UUID.randomUUID(),"Swabhav",sdf.parse("09-04-1998"));
 		
 		Partner google = new Partner(1,"Google",100000,50000);
 		Partner microsoft = new Partner(2,"Microsoft",400000,40000);
@@ -36,14 +37,12 @@ public class Program {
 		swabhav.addTalent(vinit);
 		swabhav.addTalent(jay);
 		
-		
-		//System.out.println(jay.getPartner());
 		printInfo(swabhav);
-		//printInfo(google);
+		printInfo(google);
 	}
 
 	private static void printInfo(Partner partner) {
-		System.out.println("Partner details are");
+		System.out.println("Partner "+partner.getName()+" details are");
 		System.out.println(partner);
 		
 	}

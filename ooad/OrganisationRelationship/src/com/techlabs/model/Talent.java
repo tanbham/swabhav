@@ -18,28 +18,18 @@ public class Talent {
 		this.partner = partner;
 	}
 	
-	private Partner checkIfNull(Partner Partner) {
-		if(partner == null){
-			return null;
-		}
-		else{
-			return partner;
-		}
-		
-	}
-	
 	public String getPartner(){
 		if(partner != null){
 			return partner.getName();
 		}
 		else{
-			return null;
+			return "our organisation";
 		}
 		
 	}
 
 	public String toString(){
-		return ("Id="+this.id+" , "+"Name="+this.name+" ,"+"Working for="+this.partner+" , "+"CGPA="+this.cgpa+" , "+"TechStack="+this.techStack);
+		return ("Id="+this.id+" , "+"Name="+this.name+" ,"+"Working for="+getPartner()+" , "+"CGPA="+this.cgpa+" , "+"TechStack="+this.techStack);
 	}
 	
 }
