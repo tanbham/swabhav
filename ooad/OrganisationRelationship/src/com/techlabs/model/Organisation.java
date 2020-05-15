@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 public class Organisation {
-	private int id;
+	private UUID id;
 	private String name;
 	private Date registrationDate;
 	private List<Partner> partners = new ArrayList<Partner>();
 	private List<Talent> talents = new ArrayList<Talent>();
 	
-	public Organisation(int id, String name, Date registrationDate) {
-		this.id = id;
+	public Organisation(UUID uuid, String name, Date registrationDate) {
+		this.id = uuid;
 		this.name = name;
 		this.registrationDate = registrationDate;
 	}
@@ -43,6 +44,6 @@ public class Organisation {
 	}
 
 	public String toString() {
-		return("Name of Organisation="+this.name+" , "+"Registration Date="+this.registrationDate);
+		return("Name of Organisation="+this.name+" , "+"Registration Date="+this.registrationDate+" ' "+"ID="+this.id);
 	}
 }

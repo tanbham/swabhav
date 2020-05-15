@@ -8,30 +8,36 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class ConnectionToData {
-	private IEmployeeDataFetcher fetcher;
+	private HashSet<Employee> setOfEmployees = new HashSet<Employee>();
 	private String fileName;
 	private URL oracle;
 	
-	public ConnectionToData(String fileName ,IEmployeeDataFetcher fetcher) {
+	public ConnectionToData(String fileName) {
 		this.fileName = fileName;
-		this.fetcher = fetcher;
 	}
 	
-	public ConnectionToData(IEmployeeDataFetcher fetcher,String url) throws Exception {
+	public ConnectionToData(String url , int num) throws Exception {
 		oracle = new URL(url);
-		this.fetcher = fetcher;
 	}
 	
 	public HashSet<Employee> getEmployees(){
-		return fetcher.getEmployeeDetails();
+		return setOfEmployees;
 	}
 	
 	public int getTotalNumberOfEmployees(){
-		return fetcher.getTotalNumberOfEmployees();
+		return setOfEmployees.size();
 	}
 	
 	public Employee getMaxSalariedEmployee(){
-		return fetcher.getMaximumSalariedEmployee();
+		Employee richEmployee = null;
+		double maxSalary = 0;
+		for(Employee employee : setOfEmployees){
+			if(employee.getSalary() > maxSalary){
+				maxSalary = employee.getSalary();
+				richEmployee = employee;
+			}
+		}
+		return richEmployee;
 	}
 	
 	public void readDataFromFile() throws Exception{
@@ -43,7 +49,7 @@ public class ConnectionToData {
 			inputLine = inputLine.replaceAll(" ","");
         	inputLine = inputLine.replaceAll("'","");
         	String employeeData[] = inputLine.split(",");
-        	storeInEmployeeObject(employeeData);
+        	storeNewEmployees(employeeData);
 		}
 	}
 	
@@ -54,12 +60,13 @@ public class ConnectionToData {
         	inputLine = inputLine.replaceAll(" ","");
         	inputLine = inputLine.replaceAll("'","");
         	String employeeData[] = inputLine.split(",");
-        	storeInEmployeeObject(employeeData);
+        	storeNewEmployees(employeeData);
         } 
         in.close();
 	}
 	
-	private void storeInEmployeeObject(String[] employeeData) {
-		fetcher.storeNewEmployees(employeeData);	
+	private void storeNewEmployees(String[] employeeData) {
+		Employee employee = new Employee(employeeData[0],employeeData[1],employeeData[2],employeeData[3],employeeData[4],employeeData[5],employeeData[6],employeeData[7]);
+		setOfEmployees.add(employee); 
 	}
 }
