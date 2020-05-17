@@ -24,23 +24,25 @@ public class Employee {
 	public double getSalary() {
 		return salary;
 	}
+	
+	public String getDesignation() {
+		return role;
+	}
+
+	public int getDeptNumber() {
+		return deptNumber;
+	}
 
 	public int compareTo(Employee o) {
 		return Integer.valueOf(this.empid).compareTo(Integer.valueOf(o.empid));
 	}
 	
-	public String toString() {
-		return("ID:"+this.empid+" , "+"Salary:"+this.salary+" , "+"Name:"+this.name+" , "+"Role:"+this.role+" , "+"ManagerId:"+this.managerId+" , "+"JoiningDate:"+this.dateOfJoining+" , "+"Commission:"+this.commission+" , "+"DepartmentNumber:"+this.deptNumber+"\n");
-	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((role == null) ? 0 : role.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(salary);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + empid;
 		return result;
 	}
 
@@ -53,14 +55,12 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (role == null) {
-			if (other.role != null)
-				return false;
-		} else if (!role.equals(other.role))
-			return false;
-		if (Double.doubleToLongBits(salary) != Double
-				.doubleToLongBits(other.salary))
+		if (empid != other.empid)
 			return false;
 		return true;
+	}
+	
+	public String toString() {
+		return("ID:"+this.empid+" , "+"Salary:"+this.salary+" , "+"Name:"+this.name+" , "+"Role:"+this.role+" , "+"ManagerId:"+this.managerId+" , "+"JoiningDate:"+this.dateOfJoining+" , "+"Commission:"+this.commission+" , "+"DepartmentNumber:"+this.deptNumber);
 	}
 }
